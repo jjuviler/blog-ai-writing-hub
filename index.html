@@ -319,6 +319,13 @@
     });
   });
 
+  searchInput.addEventListener('focus', () => {
+    allBtn.classList.add('active');
+    filterBtns.forEach(b => b.classList.remove('active'));
+    activeFilter = [];
+    applyFilters();
+  });
+
   searchInput.addEventListener('input', () => {
     searchQuery = searchInput.value;
     applyFilters();
