@@ -233,15 +233,24 @@ strong { font-weight: 700; }
 .card:hover { transform: translateX(3px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); text-decoration: none; }
 .card-img {
   background: linear-gradient(135deg, var(--accent-bg) 0%, #E5EEFA 100%);
-  padding: 1rem;
+  padding: 1rem 0.75rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   flex-shrink: 0;
-  width: 64px;
+  width: 80px;
   align-self: stretch;
 }
 .card-img svg { color: var(--primary); }
+.card-img .card-meta {
+  font-size: 0.65rem;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
 .card-arrow {
   margin-left: auto;
   padding: 0 1.5rem;
