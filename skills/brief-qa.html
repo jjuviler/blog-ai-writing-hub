@@ -43,7 +43,84 @@
 
         <p style="background:#e6f9f0; border:1.5px solid #2ecc71; border-radius:8px; padding:1rem 1.25rem; color:#1a7a45; font-size:0.95rem;">This skill is shared with all HubSpot blog writers — you should have access automatically. To activate it, go to <strong>Customize → Skills</strong> in Claude and look for it under <em>Shared Skills</em>. Select the skill, then toggle it on in the top right. If you don't see the skill, reach out to your manager.</p>
 
-        <p>More info coming soon.</p>
+        <h2>Overview</h2>
+        <p>Brief QA catches AI-generated hallucinations in HubSpot blog briefs before you start writing. It verifies internal and competitor URLs, checks product names against live HubSpot data, and flags suspicious pricing claims.</p>
+
+        <blockquote>
+          <strong>Why it matters:</strong> HubSpot briefs are AI-generated and may contain broken links or outdated product information. This skill catches errors upfront and prevents rework.
+        </blockquote>
+
+        <h2>What It Checks</h2>
+        <ul>
+          <li><strong>Internal URLs:</strong> Validates all HubSpot blog links actually exist using sitemap data</li>
+          <li><strong>Competitor URLs:</strong> Verifies external links are accessible</li>
+          <li><strong>Product Names:</strong> Cross-references against live HubSpot products page</li>
+          <li><strong>Pricing Claims:</strong> Flags pricing information that needs manual verification</li>
+          <li><strong>Content Freshness:</strong> Reports last-modified dates for referenced articles</li>
+        </ul>
+
+        <h2>When to Use</h2>
+        <ul>
+          <li>Immediately after receiving a new blog brief from the content team</li>
+          <li>Before starting research or outlining</li>
+          <li>When you suspect a brief might have outdated references</li>
+          <li>For any brief that cites HubSpot products or internal content</li>
+        </ul>
+
+        <h2>How to Use</h2>
+        <ol>
+          <li>Copy your blog brief from the content team</li>
+          <li>Paste it into Claude with: <em>"QA this brief using the Brief QA skill"</em></li>
+          <li>Claude will verify all URLs, products, and claims</li>
+          <li>Review flagged issues before starting your outline</li>
+        </ol>
+
+        <h2>Example Output</h2>
+        <pre><code>Brief QA Results:
+
+✅ VERIFIED URLs (5)
+- https://blog.hubspot.com/marketing/email-marketing-stats
+  Last updated: 45 days ago
+- https://blog.hubspot.com/sales/crm-strategy
+  Last updated: 12 days ago
+
+⚠️ FLAGGED URLs (2)
+- https://blog.hubspot.com/marketing/old-post-2019
+  STALE: Last updated 1,247 days ago — verify if still relevant
+- https://competitor.com/pricing
+  MANUAL CHECK NEEDED: Pricing page (verify current rates)
+
+❌ BROKEN URLs (1)
+- https://blog.hubspot.com/typo-in-url
+  404 NOT FOUND — ask for correct URL
+
+🔍 PRODUCT NAMES VERIFIED (3)
+✅ Marketing Hub
+✅ Sales Hub
+✅ Service Hub
+
+Next Steps:
+1. Update the broken URL
+2. Verify the 2019 article is still relevant
+3. Manually check competitor pricing before citing</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+
+        <h2>Tips &amp; Best Practices</h2>
+
+        <h3>Do This</h3>
+        <ul>
+          <li>Run Brief QA before you start outlining or researching</li>
+          <li>Fix broken URLs immediately — don't wait until writing</li>
+          <li>Flag stale content (1+ years old) to your editor</li>
+          <li>Always verify pricing claims manually (Brief QA flags but doesn't verify)</li>
+        </ul>
+
+        <h3>Avoid This</h3>
+        <ul>
+          <li>Skipping QA because the brief "looks fine"</li>
+          <li>Ignoring stale content warnings (relevance matters)</li>
+          <li>Citing pricing without manual verification</li>
+          <li>Using Brief QA after you've already written the post</li>
+        </ul>
 
       </div>
     </div>
