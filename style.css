@@ -256,6 +256,21 @@ strong { font-weight: 700; }
 .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
 .filter-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
 .filter-divider { width: 1px; background: var(--border); margin: 0 0.25rem; align-self: stretch; }
+.card-search {
+  padding: 0.5rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: white;
+  outline: none;
+  width: 180px;
+  transition: border-color 0.15s;
+}
+.card-search:focus { border-color: var(--primary); }
+.card-search::placeholder { color: #b0bec5; font-weight: 500; }
 .card.hidden { display: none; }
 .card.card-exit {
   opacity: 0;

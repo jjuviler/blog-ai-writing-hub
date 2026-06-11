@@ -44,6 +44,8 @@
 
   <div class="filter-bar">
     <div class="filter-bar-inner">
+      <input type="search" id="card-search" class="card-search" placeholder="Search…" autocomplete="off">
+      <div class="filter-divider"></div>
       <button class="filter-btn filter-btn-all active" data-filter="all">Show All</button>
       <div class="filter-divider"></div>
       <button class="filter-btn" data-filter="Tool">Tools</button>
@@ -243,12 +245,22 @@
   const filterBtns = document.querySelectorAll('.filter-btn:not(.filter-btn-all)');
   const grid = document.getElementById('cards-grid');
   const cards = [...grid.querySelectorAll('.card')];
+  const searchInput = document.getElementById('card-search');
 
-  function applyFilters(active) {
-    // fade out cards being hidden
+  let activeFilter = [];
+  let searchQuery = '';
+
+  function applyFilters() {
     cards.forEach(card => {
       const meta = card.querySelector('.card-meta')?.textContent.trim();
-      const shouldHide = active.length > 0 && !active.includes(meta);
+      const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+      const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+      const q = searchQuery.toLowerCase();
+
+      const passesFilter = activeFilter.length === 0 || activeFilter.includes(meta);
+      const passesSearch = q === '' || title.includes(q) || desc.includes(q);
+      const shouldHide = !passesFilter || !passesSearch;
+
       if (shouldHide && !card.classList.contains('hidden')) {
         card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
         card.classList.add('card-exit');
@@ -258,7 +270,14 @@
     setTimeout(() => {
       cards.forEach(card => {
         const meta = card.querySelector('.card-meta')?.textContent.trim();
-        const shouldHide = active.length > 0 && !active.includes(meta);
+        const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+        const q = searchQuery.toLowerCase();
+
+        const passesFilter = activeFilter.length === 0 || activeFilter.includes(meta);
+        const passesSearch = q === '' || title.includes(q) || desc.includes(q);
+        const shouldHide = !passesFilter || !passesSearch;
+
         card.classList.remove('card-exit');
         card.style.transition = '';
         card.style.transform = '';
@@ -286,7 +305,8 @@
   allBtn.addEventListener('click', () => {
     allBtn.classList.add('active');
     filterBtns.forEach(b => b.classList.remove('active'));
-    applyFilters([]);
+    activeFilter = [];
+    applyFilters();
   });
 
   filterBtns.forEach(btn => {
@@ -294,9 +314,14 @@
       allBtn.classList.remove('active');
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const active = [btn.dataset.filter];
-      applyFilters(active);
+      activeFilter = [btn.dataset.filter];
+      applyFilters();
     });
+  });
+
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value;
+    applyFilters();
   });
 </script>
 
