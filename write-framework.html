@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompting With the WRITE Framework — Blog Writers Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .copy-btn {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(255,122,89,0.85); color: white;
+      border: none; padding: 5px 12px; border-radius: 4px;
+      font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 700;
+      cursor: pointer; transition: opacity 0.15s;
+    }
+    .copy-btn:hover { opacity: 0.85; }
+    pre { position: relative; }
+    blockquote {
+      border-left: 4px solid var(--primary);
+      background: rgba(255,122,89,0.06);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+    }
+    blockquote strong { font-style: normal; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
+      </div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting Started </a>
+      <a href="best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Prompting With the WRITE Framework</h1>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="content-body">
+
+        <div style="margin-bottom:2rem;">
+          <iframe src="https://www.loom.com/embed/3793017ef2b94023807cf91e3e7a5431" frameborder="0" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:8px;"></iframe>
+        </div>
+
+        <h2>Overview</h2>
+        <p>The WRITE Framework is a structured approach to AI prompting that feeds Claude five critical pieces of information before it writes a single word. Each letter represents a component that, when combined, transforms generic AI outputs into drafts that sound like you actually wrote them.</p>
+
+        <blockquote>
+          <strong>Core Principle:</strong> W sets the voice. R sets the stage. I sets the action. T sets the guardrails. E sets the finish line.
+        </blockquote>
+
+        <h2>The Five Components</h2>
+
+        <h3>W — Who (Persona)</h3>
+        <p><strong>The Question It Answers:</strong> Who is the AI acting as? Who is reading this?</p>
+        <p>This isn't just telling Claude to "act as a senior editor." It's defining both sides of the conversation:</p>
+        <ul>
+          <li><strong>Who is Claude?</strong> A senior HubSpot blog editor who's shipped 200+ posts and writes with authority but keeps things accessible.</li>
+          <li><strong>Who is the audience?</strong> Mid-market marketing managers who've tried AI tools but haven't integrated them into their workflow.</li>
+        </ul>
+        <p><em>Why it matters:</em> A CMO skimming on mobile is not the same as a developer reading technical docs. Audience awareness shapes every word choice.</p>
+
+        <h3>R — Resources (Context)</h3>
+        <p><strong>The Question It Answers:</strong> What background does the AI need to get this right?</p>
+        <p>This is your context dump. Include:</p>
+        <ul>
+          <li>Topic details and target keywords</li>
+          <li>Audience pain points</li>
+          <li>Competitive landscape ("most content on this is dry and technical")</li>
+          <li>Your company's angle ("educate first, don't sell")</li>
+          <li>Any files, docs, or reference materials</li>
+        </ul>
+        <p><em>Why it matters:</em> Claude doesn't know your industry nuances, your competitors, or your brand positioning unless you tell it.</p>
+
+        <h3>I — Instructions</h3>
+        <p><strong>The Question It Answers:</strong> What exactly should the AI do?</p>
+        <p>This is the action step. Be specific:</p>
+        <ul>
+          <li>"Create a blog post outline about CRM data hygiene"</li>
+          <li>"Open with a hook that quantifies the cost of dirty data"</li>
+          <li>"Structure as a listicle with 5–7 actionable steps"</li>
+        </ul>
+        <p>Use numbered lists, checkboxes, or workflow steps. The clearer your instructions, the more accurate the output.</p>
+        <p><em>Why it matters:</em> Vague instructions produce vague results. "Write a blog" is not an instruction — it's a wish.</p>
+
+        <h3>T — Terms (Constraints)</h3>
+        <p><strong>The Question It Answers:</strong> What rules, limits, or boundaries apply?</p>
+        <p>This is where you set guardrails:</p>
+        <ul>
+          <li>Format requirements ("listicle with H2 headers")</li>
+          <li>Length targets ("1,200–1,500 words")</li>
+          <li>Tone rules ("Bold Illuminator: confident, clear, no fluff")</li>
+          <li>Things to avoid ("no jargon without plain-English explanation")</li>
+        </ul>
+        <p><em>Why it matters:</em> Without constraints, Claude will optimize for completeness, not your specific needs. You'll get 3,000 words when you needed 800.</p>
+
+        <h3>E — Expected Outcome</h3>
+        <p><strong>The Question It Answers:</strong> What does the finished product look like?</p>
+        <p>Paint a picture of success. Include:</p>
+        <ul>
+          <li>Output format ("a clean outline in Markdown")</li>
+          <li>Specific deliverables ("working title under 60 characters, 5–7 H2 headers, meta description")</li>
+          <li>Examples of what you want ("here's a paragraph from a top-performing post")</li>
+        </ul>
+        <p><em>Why it matters:</em> If you can show Claude what "done" looks like, it will hit the target 10x faster than if you describe it in abstract terms.</p>
+
+        <h2>Before vs After Example</h2>
+
+        <h3>Before WRITE (Generic Prompt)</h3>
+        <pre><code>Write a blog outline about CRM data hygiene</code><button class="copy-btn" onclick="navigator.clipboard.writeText('Write a blog outline about CRM data hygiene');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></pre>
+        <p><strong>Result:</strong> Generic, no HubSpot voice, no audience awareness. Reads like every other AI blog outline on the internet. "The AI equivalent of elevator music."</p>
+
+        <h3>After WRITE (Structured Prompt)</h3>
+        <pre id="write-example"><code>I'm using the WRITE framework to structure this prompt.
+
+W -- WHO (Persona):
+You are a senior HubSpot blog editor who's shipped 200+ posts.
+The audience is mid-market marketing and sales leaders whose CRM
+is full of duplicates and outdated contacts.
+
+R -- RESOURCES (Context):
+- Topic: CRM data hygiene
+- Audience pain point: dirty data is costing them deals
+- HubSpot angle: educate first, not sell
+
+I -- INSTRUCTIONS:
+Create a blog post outline. Open with a hook that quantifies the
+cost of dirty data. Structure as a listicle with 5-7 actionable steps.
+
+T -- TERMS (Constraints):
+- Format: listicle with H2 headers
+- 1,200-1,500 word target
+- Bold Illuminator tone: confident, clear, no fluff
+
+E -- EXPECTED OUTCOME:
+A clean outline in Markdown with: working title (under 60 characters),
+5-7 H2 headers, 1-2 sentence description per section, suggested word
+counts, and meta description (under 155 characters).</code><button class="copy-btn" onclick="navigator.clipboard.writeText(document.querySelector('#write-example code').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></pre>
+        <p><strong>Result:</strong> Specific, on-brand, audience-aware. Has a point of view. Mirrors HubSpot voice. Written for a specific person, not a generic "reader."</p>
+
+        <h2>Quick Start</h2>
+        <ol class="steps">
+          <li><strong>Copy the template</strong> from the <a href="prompts/write-framework-template.html">Prompt Examples section</a></li>
+          <li><strong>Fill in Who and Expected Outcome first</strong> — these two alone get you 80% of the way there</li>
+          <li><strong>Add context in Resources</strong> — the more specific, the better</li>
+          <li><strong>Write clear Instructions</strong> — numbered steps work best</li>
+          <li><strong>Set constraints in Terms</strong> — format, length, tone</li>
+          <li><strong>Define success in Expected Outcome</strong> — show an example if you have one</li>
+        </ol>
+
+        <h2>When to Use WRITE</h2>
+        <ul>
+          <li>Blog post outlines and drafts</li>
+          <li>Email campaigns</li>
+          <li>Social media content</li>
+          <li>Product descriptions</li>
+          <li>Landing page copy</li>
+          <li>Anything where voice, audience, and quality matter</li>
+        </ul>
+
+        <h2>Tips &amp; Pitfalls</h2>
+        <div class="do-dont-grid">
+          <div class="do-box">
+            <h4>✅ Do This</h4>
+            <ul>
+              <li>Start with Who and Expected Outcome first</li>
+              <li>Paste in real examples of top-performing posts</li>
+              <li>Be specific about tone ("Bold Illuminator")</li>
+              <li>Include audience pain points in Resources</li>
+              <li>Set realistic length targets in Terms</li>
+            </ul>
+          </div>
+          <div class="dont-box">
+            <h4>❌ Avoid This</h4>
+            <ul>
+              <li>Skipping components — each one serves a purpose</li>
+              <li>Being vague in Instructions ("write something good")</li>
+              <li>Forgetting constraints — you'll get 3,000 words for an 800-word post</li>
+              <li>Using it as a rigid checklist — adapt it to your needs</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Prompting Best Practices</h2>
+
+        <h3>1. Always Use Structured Prompts</h3>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't do this</h4>
+            <p>Write a blog post about CRM data hygiene</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do this</h4>
+            <p>Use the <a href="write-framework.html">WRITE Framework</a> with all 5 components</p>
+          </div>
+        </div>
+
+        <h3>2. Provide Real Examples</h3>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't do this</h4>
+            <p>Write in HubSpot's tone</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do this</h4>
+            <p>Paste 2–3 paragraphs from top-performing HubSpot blog posts as examples</p>
+          </div>
+        </div>
+
+        <h3>3. Set Clear Constraints</h3>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't do this</h4>
+            <p>Make it concise</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do this</h4>
+            <p>1,200–1,500 words, 5–7 H2 sections, Bold Illuminator tone</p>
+          </div>
+        </div>
+
+        <h2>Prompt Example: Blog Outline Generation</h2>
+        <p>You have a brief and need to generate a detailed, publish-ready outline with working title, meta description, H2 sections, supporting points, and word count guidance.</p>
+        <pre><code>I'm using the WRITE framework to structure this prompt.
+
+W -- WHO (Persona):
+You are a senior HubSpot blog editor who has shipped 200+ posts. You understand how to structure content for search intent and reader engagement. The audience is mid-market marketing managers at companies with 50-500 employees who are struggling with declining email open rates.
+
+R -- RESOURCES (Context):
+- Article topic: Email marketing best practices 2025
+- Target keyword: "email marketing best practices"
+- Pain point: Declining email open rates despite following "standard" advice
+- Competitive landscape: Most competing content is generic listicles with surface-level tips
+- HubSpot angle: HubSpot's 2024 Email Marketing Benchmark Report with real open rate data
+- Additional context: Readers have tried the basics and need advanced, specific tactics
+
+I -- INSTRUCTIONS:
+1. Start with a hook angle about why open rates are declining despite "doing everything right"
+2. Structure 6-8 H2 sections that each address a specific, actionable tactic
+3. Include 2-3 supporting bullet points under each H2
+4. Identify one natural place to mention a HubSpot product (not forced)
+5. End with a CTA section pointing to a HubSpot resource
+
+T -- TERMS (Constraints):
+- Format: Markdown outline
+- Length: Outline should map to a 1800-2200 word article
+- Tone: Bold Illuminator — confident, data-backed, not generic
+- Structure: No generic headers like "Introduction" or "Conclusion"
+- Rules: Every H2 should be actionable, not theoretical
+
+E -- EXPECTED OUTCOME:
+A Markdown outline with:
+- Working title (under 60 characters)
+- Meta description (under 155 characters)
+- 6-8 H2 sections with 2-3 bullet points each
+- Suggested word counts per section
+- Notes on where to place data points or stats</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+        <h3>Why This Works</h3>
+        <ul>
+          <li><strong>Specific audience definition</strong> gives Claude context that produces targeted, non-generic output</li>
+          <li><strong>Competitive landscape context</strong> tells Claude what to avoid (surface-level listicles)</li>
+          <li><strong>Clear structural requirements</strong> (6-8 H2s, 2-3 bullets each) produce consistent depth</li>
+          <li><strong>Actionable constraint</strong> prevents theoretical headers that don't help readers</li>
+          <li><strong>Expected Outcome with specifics</strong> means Claude knows exactly what format to return</li>
+        </ul>
+
+        <h2>Prompt Example: Blog Introduction Writing</h2>
+        <p>You have an outline and need to write a strong introduction that hooks the reader, states the promise, and previews what's coming.</p>
+        <pre><code>I'm using the WRITE framework to structure this prompt.
+
+W -- WHO (Persona):
+You are a HubSpot blog writer who opens every post with a strong hook. You know how to grab attention in the first sentence and deliver value by paragraph three. The audience is busy marketing managers who will abandon the post if the intro doesn't promise clear value.
+
+R -- RESOURCES (Context):
+- Article topic: How to reduce customer churn with email automation
+- Target keyword: "reduce customer churn"
+- Main promise: Readers will learn 5 proven email sequences that cut churn by 20-30%
+- Audience insight: They know churn is a problem but don't know where to start
+
+I -- INSTRUCTIONS:
+Write the introduction for this blog post that:
+1. Opens with a surprising statistic about customer churn
+2. Acknowledges the reader's frustration (paragraph 2)
+3. States the promise clearly - what they'll learn and the outcome
+4. Previews the 5 email sequences we'll cover
+5. Total length: 150-200 words
+
+T -- TERMS (Constraints):
+- Tone: Bold Illuminator - confident but not cocky
+- Hook: Must be surprising and relevant (not generic)
+- Promise: Must be specific ("5 email sequences" not "some strategies")
+- No fluff: Every sentence must earn its place
+- Write for skimmers: Short paragraphs (2-3 sentences max)
+
+E -- EXPECTED OUTCOME:
+3-4 paragraphs totaling 150-200 words with this structure:
+- Paragraph 1: Hook with a statistic
+- Paragraph 2: Acknowledge the pain point
+- Paragraph 3: State the promise with specific outcome
+- Paragraph 4: Preview what's coming (optional if under 200 words)</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+        <h3>Why This Works</h3>
+        <ul>
+          <li><strong>Structural specificity</strong> ("paragraph 1 = hook with statistic") removes ambiguity — Claude knows exactly what goes where</li>
+          <li><strong>Length constraint</strong> (150–200 words) prevents rambling introductions that lose readers</li>
+          <li><strong>Skimmer-friendly requirement</strong> (2–3 sentences per paragraph) produces scannable, readable prose</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 103</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogbot — Blog Writers Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting Started </a>
+      <a href="best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Blogbot</h1>
+    </div>
+  </div>
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="content-body">
+
+        <p><a href="https://workspace.google.com/marketplace/app/blogbot/638522139319" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom:8px;">Install Blogbot</a></p>
+        <p style="font-size:0.85rem; color:#e02020;"><strong>Note for Jamie:</strong> Delete the old instructions page and update internal links in the tool — <a href="https://docs.google.com/document/d/1jl8_41jd8fufH2PL-yYH-7QQEvBVeqXwtqPlKqoyz7U/edit?tab=t.0" target="_blank" rel="noopener noreferrer">old instructions doc</a>.</p>
+
+        <h2>Overview</h2>
+        <p>Blogbot is a Google Docs add-on that handles two tasks for blog writers: QA and uploads. It runs inside the Google Doc you're working in as a sidebar with two tabs:</p>
+        <ul>
+          <li><strong>QA tab:</strong> Runs automated checks across the draft, covering style, links, alt text, plagiarism, AEO structure, legal flags, and more. Checks can be toggled on or off individually.</li>
+          <li><strong>Upload tab:</strong> Prepares the doc for CMS upload.</li>
+        </ul>
+        <p>Use the QA tab once your draft is fully written. Once QA is clear, switch to the Upload tab to push the post. Both tabs share an Asana task URL field — pasting the task URL pulls the primary keyword, secondary keywords, brief notes, and live post URL into Blogbot, which several QA checks rely on.</p>
+
+        <h2>Getting Started</h2>
+
+        <h3>Installing Blogbot</h3>
+        <p>Install Blogbot from the Google Workspace Marketplace. Once installed, open it from any Google Doc by clicking the Blogbot icon in the right-hand sidebar.</p>
+        <p>The first time you open Blogbot in a doc, Google will ask you to grant permissions. Blogbot needs access to read and modify the active doc, fetch URLs (for link checking and Asana), and store your settings.</p>
+
+        <h3>Connecting an Asana Task</h3>
+        <p>At the top of the sidebar, paste the full URL of the Asana task for the post you're working on. Once pasted, Blogbot pulls the primary keyword, secondary keywords, task description, and live post URL from the task. You can also enter this information manually.</p>
+        <p>Several QA checks depend on this data. If the Asana URL isn't connected, those checks run with reduced accuracy.</p>
+
+        <h2>The QA Tab</h2>
+        <p>The QA tab checks a draft against HubSpot's editorial and AEO/SEO standards.</p>
+
+        <h3>Running a Scan</h3>
+        <ol>
+          <li>Make sure the QA tab is selected at the top of the sidebar.</li>
+          <li>Paste the Asana task URL (or enter task information manually).</li>
+          <li>Toggle your scan checks by clicking the down arrow on the Run scan button. For most scans, all checks are recommended.</li>
+          <li>Click <strong>Run scan</strong>.</li>
+        </ol>
+        <p>Most scans finish in 30–90 seconds depending on draft length, link count, and which checks are enabled. The original content (plagiarism) and functional links checks are the slowest.</p>
+
+        <h3>Viewing Results</h3>
+        <p>If the scan finds issues, it returns one or more issue cards sorted by check type. Click a card to jump to the location in the doc where the issue occurs. Some cards offer an auto-fix option or a fix suggestion.</p>
+        <p>To close a card, click the X in the top right corner — note this does not resolve the issue in the document. After a scan, you can also click <strong>Copy results</strong> to copy a plaintext summary of all flagged issues to your clipboard.</p>
+        <p>Blogbot doesn't auto-refresh results when you edit the document. After fixing issues, click <strong>Run scan</strong> again. You can also re-scan a single check by clicking the rescan button (↺).</p>
+
+        <h3>Dismissing vs. Fixing</h3>
+        <p>Not every flag needs a fix. Common cases for dismissing rather than editing:</p>
+        <ul>
+          <li>A blocked phrase (Authentic Language) is genuinely the right word in context.</li>
+          <li>An AEO structure gap is intentional (e.g., a personal essay format).</li>
+          <li>A legal flag is on quoted source material that's been cleared.</li>
+        </ul>
+        <p>Use your judgment. If you're unsure whether to dismiss a flag, ask your manager or the BCAP Slack channel.</p>
+
+        <h2>The Upload Tab</h2>
+        <p>The upload tab prepares the draft for upload to the CMS.</p>
+
+        <h3>How to Prep and Upload</h3>
+        <ol>
+          <li>Switch to the <strong>Upload tab</strong> at the top of the sidebar.</li>
+          <li>Confirm your upload options:
+            <ul>
+              <li><strong>Table of contents:</strong> Generates a TOC from the doc's H2s and inserts it near the top of the post. Turn off for short posts, listicles where H2s are the list items, or any post where a TOC would feel redundant.</li>
+              <li><strong>Editor's note:</strong> Adds an editor's note inserted at the bottom of the published post (used for updated/refreshed content).</li>
+            </ul>
+          </li>
+          <li>Click <strong>Upload doc</strong>. Blogbot converts the document to HTML and compresses the document's images.</li>
+          <li>Your browser will download the compressed images automatically. Save these to your desktop, then upload them to the file manager in 53.</li>
+          <li>Copy the source code from Blogbot and paste it into the 53 source code window.</li>
+        </ol>
+        <blockquote>
+          <strong>Important:</strong> Upload your images before pasting the source code into 53. Otherwise, images may not load properly in the blog post body.
+        </blockquote>
+        <blockquote>
+          <strong>Backup:</strong> If the Upload tab isn't working, use <a href="https://jjuviler.github.io/blogbot/" target="_blank" rel="noopener noreferrer">Blogbot 4</a> as a fallback.
+        </blockquote>
+
+        <h2>Settings</h2>
+        <p>Click the settings button at the bottom of the sidebar to open the Blogbot settings menu.</p>
+        <ul>
+          <li><strong>Cache toggle:</strong> By default, Blogbot caches results from previous scans. If a follow-up scan runs on the exact same text, it fetches results from the last scan. Keep this on except for debugging. Cache is per-doc and resets when you open a different doc.</li>
+          <li><strong>Scan scope:</strong> Choose between <em>Current tab only</em> (scans only the open document tab) or <em>Full doc</em> (scans all tabs in the document).</li>
+          <li><strong>Style sub-check toggles:</strong> The Style check includes several sub-checks that can each be toggled on and off. Unless debugging, all style sub-checks should be enabled.</li>
+        </ul>
+
+        <h2>Reporting Issues</h2>
+        <p>If Blogbot gives you an error or takes too long to run a scan or upload, let Jamie know. Screenshots are helpful.</p>
+        <p>If you see a persistent error, try removing and reinstalling Blogbot a couple of times. If it's still not working, check the following:</p>
+        <ul>
+          <li>Are you logged in to your HubSpot account?</li>
+          <li>When you reinstalled, did you get an authorization/permissions prompt and click through it?</li>
+          <li>Does the error appear on any doc, or just a specific one? This error will show if you try to open Blogbot on a doc you don't have edit access to.</li>
+        </ul>
+        <p>If you're still seeing the error, reach out to Jamie Juviler (<a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a>).</p>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 104</div>
+</body>
+</html>

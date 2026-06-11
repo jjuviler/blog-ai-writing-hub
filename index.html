@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Writers Hub</title>
+  <meta name="description" content="AI-powered frameworks, Claude skills, and prompt examples for HubSpot blog content creators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
+      </div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting Started </a>
+      <a href="best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Blog Writers Hub</h1>
+      <p>AI-powered frameworks, Claude skills, and prompt examples tailored for HubSpot blog content creators.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-bar-inner">
+      <button class="filter-btn filter-btn-all active" data-filter="all">Show All</button>
+      <div class="filter-divider"></div>
+      <button class="filter-btn" data-filter="Tool">Tools</button>
+      <button class="filter-btn" data-filter="Training">Trainings</button>
+      <button class="filter-btn" data-filter="Claude Skill">Claude Skills</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-inner">
+      <div class="cards-grid" id="cards-grid">
+
+        <a href="blogbot.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Tool</div>
+            <h3>Blogbot</h3>
+            <p>A Google Docs add-on that runs QA checks on drafts and converts docs to upload-ready HTML for the CMS.</p>
+                      </div>
+        </a>
+
+        <a href="copy-page-body.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Tool</div>
+            <h3>Copy Page Body</h3>
+            <p>A Chrome extension that copies a HubSpot blog post's content to your clipboard with one click.</p>
+            
+          </div>
+        </a>
+
+        <a href="write-framework.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Training</div>
+            <h3>Prompting With the WRITE Framework</h3>
+            <p>A structured approach to AI prompting using five components: Who, Resources, Instructions, Terms, and Expected Outcome.</p>
+                      </div>
+        </a>
+
+
+        <a href="videos/02-creating-editing-claude-skills.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Training</div>
+            <h3>Creating and Editing Claude Skills</h3>
+            <p>How to install, use, and modify Claude Skills — including building your own from scratch using the Skill Creator tool.</p>
+                      </div>
+        </a>
+
+<a href="skills/brief-qa.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+              <path transform="rotate(0,16,16)"   d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(30,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(60,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(90,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(120,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(150,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(180,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(210,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(240,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(270,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(300,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(330,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Claude Skill</div>
+            <h3>Brief QA</h3>
+            <p>Catch hallucinated URLs, stale content, and data errors in AI-generated briefs before you start writing.</p>
+                      </div>
+        </a>
+
+        <a href="skills/product-research-assistant.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+              <path transform="rotate(0,16,16)"   d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(30,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(60,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(90,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(120,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(150,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(180,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(210,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(240,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(270,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(300,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(330,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Claude Skill</div>
+            <h3>Product Research Assistant</h3>
+            <p>Research 5–11 competitor products for comparison listicles, with built-in verification flags for accuracy.</p>
+                      </div>
+        </a>
+
+        <a href="skills/hubspot-products.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+              <path transform="rotate(0,16,16)"   d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(30,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(60,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(90,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(120,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(150,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(180,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(210,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(240,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(270,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(300,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(330,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Claude Skill</div>
+            <h3>HubSpot Products</h3>
+            <p>Accurately describe HubSpot product features, tiers, and capabilities with up-to-date knowledge built in.</p>
+                      </div>
+        </a>
+
+        <a href="skills/hubspot-branding-artifact-creator.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+              <path transform="rotate(0,16,16)"   d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(30,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(60,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(90,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(120,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(150,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(180,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(210,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(240,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(270,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(300,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(330,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Claude Skill</div>
+            <h3>HubSpot Branding Artifact Creator</h3>
+            <p>Generate on-brand HubSpot content artifacts — social posts, email templates, and more — with consistent voice and visual language.</p>
+                      </div>
+        </a>
+
+        <a href="skills/aeo-draft-auditor.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+              <path transform="rotate(0,16,16)"   d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(30,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(60,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(90,16,16)"  d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(120,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(150,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(180,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(210,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(240,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(270,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(300,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+              <path transform="rotate(330,16,16)" d="M14.5,16 L14.8,5 L15.5,2 L16.5,2 L17.2,5 L17.5,16 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Claude Skill</div>
+            <h3>AEO Draft Auditor</h3>
+            <p>Audit blog drafts for Answer Engine Optimization — structured data, direct answers, and AI-ready formatting.</p>
+                      </div>
+        </a>
+
+        <a href="prompts/write-framework-template.html" class="card">
+          <div class="card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Prompt Example</div>
+            <h3>WRITE Framework Template</h3>
+            <p>The blank template for all five WRITE components. Copy this and fill in your details for any blog writing task.</p>
+                      </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+<script>
+  const allBtn = document.querySelector('.filter-btn-all');
+  const filterBtns = document.querySelectorAll('.filter-btn:not(.filter-btn-all)');
+  const grid = document.getElementById('cards-grid');
+  const cards = [...grid.querySelectorAll('.card')];
+
+  function applyFilters(active) {
+    // fade out cards being hidden
+    cards.forEach(card => {
+      const meta = card.querySelector('.card-meta')?.textContent.trim();
+      const shouldHide = active.length > 0 && !active.includes(meta);
+      if (shouldHide && !card.classList.contains('hidden')) {
+        card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        card.classList.add('card-exit');
+      }
+    });
+
+    setTimeout(() => {
+      cards.forEach(card => {
+        const meta = card.querySelector('.card-meta')?.textContent.trim();
+        const shouldHide = active.length > 0 && !active.includes(meta);
+        card.classList.remove('card-exit');
+        card.style.transition = '';
+        card.style.transform = '';
+        card.classList.toggle('hidden', shouldHide);
+        if (!shouldHide) {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.92)';
+        }
+      });
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          cards.forEach(card => {
+            if (!card.classList.contains('hidden')) {
+              card.style.transition = 'opacity 0.25s ease 0.1s, transform 0.25s ease 0.1s';
+              card.style.opacity = '';
+              card.style.transform = '';
+            }
+          });
+        });
+      });
+    }, 200);
+  }
+
+  allBtn.addEventListener('click', () => {
+    allBtn.classList.add('active');
+    filterBtns.forEach(b => b.classList.remove('active'));
+    applyFilters([]);
+  });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allBtn.classList.remove('active');
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const active = [btn.dataset.filter];
+      applyFilters(active);
+    });
+  });
+</script>
+
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 100</div>
+</body>
+</html>

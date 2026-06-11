@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEO Draft Auditor — Blog Writers Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .copy-btn { position:absolute; top:12px; right:12px; background:rgba(255,122,89,0.85); color:white; border:none; padding:5px 12px; border-radius:4px; font-family:'Nunito',sans-serif; font-size:12px; font-weight:700; cursor:pointer; }
+    pre { position: relative; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../getting-started.html">Getting Started </a>
+      <a href="../best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>AEO Draft Auditor</h1>
+    </div>
+  </div>
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="content-body">
+        <p><a href="aeo-draft-auditor.skill" download class="btn btn-primary" style="margin-bottom:1.5rem;">Download Skill</a></p>
+        <h2>Overview</h2>
+        <p>The AEO Draft Auditor scans blog drafts against HubSpot's official AEO source-of-truth documents, flagging terminology misalignment, incorrect product naming, and inaccurate claims before they make it to publish.</p>
+
+        <blockquote>
+          HubSpot's AEO launch has specific terminology rules, positioning requirements, and language that must be used consistently across all blog content. Manual cross-referencing is slow and error-prone — this skill automates that check.
+        </blockquote>
+
+        <h2>Reference Documents</h2>
+        <p>The skill audits against three official AEO source documents:</p>
+        <ol>
+          <li>Positioning &amp; Messaging Guide SSOT</li>
+          <li>AEO FAQ</li>
+          <li>AEO Editorial &amp; Terminology Guidelines</li>
+        </ol>
+
+        <h2>What It Audits</h2>
+        <ul>
+          <li><strong>Terminology &amp; Product Naming:</strong> Flags use of banned terms or incorrect product names</li>
+          <li><strong>Product Accuracy:</strong> Verifies claims about AEO features against official documentation</li>
+          <li><strong>Stats, Proof &amp; Competitive Claims:</strong> Checks data points and competitive assertions</li>
+          <li><strong>CRM &amp; Echoes Language:</strong> Flags violations of CRM-specific language rules</li>
+          <li><strong>Messaging &amp; Positioning Alignment:</strong> Ensures the draft aligns with official AEO positioning</li>
+        </ul>
+
+        <h2>Severity Levels</h2>
+
+        <h3>🔴 Must Fix</h3>
+        <ul>
+          <li>Factual errors about AEO capabilities</li>
+          <li>Banned terminology or product names</li>
+          <li>Wrong pricing or feature claims</li>
+          <li>CRM language violations</li>
+          <li>Using "standalone" in external content</li>
+          <li>Positioning AEO as an SEO replacement</li>
+        </ul>
+
+        <h3>🟡 Recommended Fix</h3>
+        <ul>
+          <li>Suboptimal phrasing that could be stronger</li>
+          <li>Using "questions" instead of "prompts"</li>
+          <li>Vague "AI-powered" claims without specificity</li>
+        </ul>
+
+        <h2>When to Use</h2>
+        <ul>
+          <li>Before publishing any AEO-related blog content</li>
+          <li>After drafting — before sending to editor review</li>
+          <li>When editing freelancer-submitted AEO content</li>
+          <li>Any time you need to verify AEO terminology compliance</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ol>
+          <li><strong>Download the skill:</strong> Click the button above to access the skill package</li>
+          <li><strong>Open Claude Settings:</strong> Go to claude.ai → Settings → Capabilities → Skills</li>
+          <li><strong>Install the skill:</strong> Drag and drop the zip into the Skills upload area</li>
+          <li><strong>Activate the skill:</strong> Enable "AEO Draft Auditor" in your skills list</li>
+        </ol>
+
+        <h2>How to Use</h2>
+        <ol>
+          <li>Paste your complete AEO blog draft into Claude</li>
+          <li>Tell Claude: "Audit this draft using the AEO Draft Auditor skill"</li>
+          <li>The skill auto-fetches the latest AEO reference documents</li>
+          <li>Claude scans the draft and returns a structured audit report</li>
+          <li>Address all 🔴 Must Fix issues before submitting for review</li>
+        </ol>
+
+        <h2>Example Audit Report Format</h2>
+        <pre><code>AEO DRAFT AUDIT REPORT
+======================
+🔴 MUST FIX (3 issues)
+- Para 2: "AEO replaces SEO" — AEO should complement SEO, not replace it
+- Para 5: Uses banned term "standalone AEO" — remove "standalone"
+- Para 8: Pricing claim unverifiable — remove or verify against live page
+
+🟡 RECOMMENDED FIX (2 issues)
+- Para 1: "questions" should be "prompts" per AEO terminology guide
+- Para 6: "AI-powered" is vague — specify what AI capability is being referenced</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 305</div>
+</body>
+</html>

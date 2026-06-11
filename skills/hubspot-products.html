@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HubSpot Products — Blog Writers Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .copy-btn { position:absolute; top:12px; right:12px; background:rgba(255,122,89,0.85); color:white; border:none; padding:5px 12px; border-radius:4px; font-family:'Nunito',sans-serif; font-size:12px; font-weight:700; cursor:pointer; }
+    pre { position: relative; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../getting-started.html">Getting Started </a>
+      <a href="../best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>HubSpot Products</h1>
+    </div>
+  </div>
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="content-body">
+        <p><a href="hubspot-products-v5.skill" download class="btn btn-primary" style="margin-bottom:1.5rem;">Download Skill</a></p>
+        <div style="margin-bottom:2rem;">
+          <iframe src="https://www.loom.com/embed/bb433e9f96af4db4afb9cb08b43a641b" frameborder="0" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:8px;"></iframe>
+        </div>
+
+        <h2>Overview</h2>
+        <p>The HubSpot Products skill provides a comprehensive database of HubSpot's product pages, pricing tiers, features, and integrations. It's designed to be your source of truth for accurate HubSpot product information when writing blog content.</p>
+
+        <blockquote>
+          <strong>Why It Exists:</strong> HubSpot's live product pages are often hard for AI to read due to JavaScript rendering, cookie banners, and complex page structures. This skill provides clean, LLM-optimized product data.
+        </blockquote>
+
+        <h2>What It Covers</h2>
+        <ul>
+          <li><strong>All 8 HubSpot Hubs:</strong> Marketing, Sales, Service, CMS, Operations, Commerce, Payments, Data Management</li>
+          <li><strong>Pricing Information:</strong> Free, Starter, Professional, Enterprise tiers for each hub</li>
+          <li><strong>Feature Details:</strong> Specific capabilities and tools within each hub</li>
+          <li><strong>Integrations:</strong> Connected apps and platform compatibility</li>
+          <li><strong>Product Relationships:</strong> How different hubs and features work together</li>
+        </ul>
+
+        <h2>When to Use</h2>
+        <ul>
+          <li>Writing sections about specific HubSpot features (lead scoring, email automation, etc.)</li>
+          <li>Comparing HubSpot pricing tiers in listicles or buying guides</li>
+          <li>Fetching accurate product descriptions for blog intros or context sections</li>
+          <li>Verifying feature availability across different hub tiers</li>
+          <li>Any time you need canonical HubSpot product information</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ol>
+          <li><strong>Download the skill:</strong> Click the button above to access the skill package</li>
+          <li><strong>Open Claude Settings:</strong> Go to claude.ai → Settings → Capabilities → Skills</li>
+          <li><strong>Install the skill:</strong> Drag and drop the HubSpot Products.skill file into the Skills upload area</li>
+          <li><strong>Activate the skill:</strong> Enable "HubSpot Products" in your skills list</li>
+        </ol>
+
+        <h2>How to Use</h2>
+
+        <h3>Example 1: Writing About a Specific Feature</h3>
+        <pre><code>Write a paragraph about HubSpot's lead scoring feature in Marketing Hub.
+Use the HubSpot Products skill for accurate information.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+
+        <h3>Example 2: Fetching Pricing Information</h3>
+        <pre><code>What's the pricing for each tier of Marketing Hub?
+Use the HubSpot Products skill.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+
+        <h2>Important Notes</h2>
+
+        <h3>Data Freshness</h3>
+        <ul>
+          <li><strong>Current as of:</strong> March 1, 2026 (snapshot of live HubSpot product pages)</li>
+          <li><strong>Updates after 3/1/2026:</strong> Not reflected in this skill until next quarterly update</li>
+          <li><strong>Update schedule:</strong> Quarterly (after major launches like INBOUND, Spotlight)</li>
+          <li><strong>Always verify:</strong> For posts about brand-new features or recent pricing changes, check live pages</li>
+        </ul>
+
+        <h2>What This Prevents</h2>
+        <ul>
+          <li><strong>Hallucinated features:</strong> Claude won't make up product capabilities</li>
+          <li><strong>Outdated pricing:</strong> Gets pricing from curated data, not random web results</li>
+          <li><strong>Wrong hub assignments:</strong> Knows which features belong to which hub</li>
+          <li><strong>Broken links:</strong> Provides canonical URLs that actually work</li>
+        </ul>
+
+        <h2>Maintained By</h2>
+        <p>Tim Biondollo and Jamie update this skill after major HubSpot product launches. If you notice outdated information, flag it to either of them.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 304</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Practices — Blog Writers Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
+      </div>
+      Blog Writers Hub
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting Started </a>
+      <a href="best-practices.html">Best Practices</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Best Practices</h1>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="content-body">
+
+        <h2>Workflow Integration</h2>
+
+        <h3>Recommended Workflow for Listicle Posts</h3>
+        <ol class="steps">
+          <li><strong>Receive brief</strong> — Run Brief QA skill immediately</li>
+          <li><strong>Fix flagged issues</strong> — Update broken URLs and verify stale content</li>
+          <li><strong>Research products</strong> — Use Product Research Assistant with verification</li>
+          <li><strong>Create outline</strong> — Use WRITE Framework for structured prompting</li>
+          <li><strong>Write draft</strong> — Continue using WRITE Framework for each section</li>
+          <li><strong>Generate alt text</strong> — Use Alt Text Generator in Blogbot</li>
+          <li><strong>Review everything</strong> — Never skip human verification</li>
+        </ol>
+
+        <h2>Quality Control</h2>
+
+        <h3>Always Verify</h3>
+        <ul>
+          <li><strong>URLs:</strong> Click every link to confirm it works</li>
+          <li><strong>Pricing:</strong> Check official product pages for current rates</li>
+          <li><strong>Product names:</strong> Verify against official HubSpot products page</li>
+          <li><strong>Statistics:</strong> Trace claims back to original sources</li>
+          <li><strong>Tone:</strong> Read aloud to ensure it sounds like HubSpot</li>
+        </ul>
+
+        <h3>Common Mistakes to Avoid</h3>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't</h4>
+            <p>Copy-paste AI output without review</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do</h4>
+            <p>Treat AI output as a first draft that needs your expertise</p>
+          </div>
+        </div>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't</h4>
+            <p>Use skills without understanding what they do</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do</h4>
+            <p>Watch the <a href="video-walkthroughs.html">video walkthroughs</a> before using new skills</p>
+          </div>
+        </div>
+        <div class="do-dont-grid">
+          <div class="dont-box">
+            <h4>❌ Don't</h4>
+            <p>Use AI to replace your expertise</p>
+          </div>
+          <div class="do-box">
+            <h4>✅ Do</h4>
+            <p>Use AI to handle repetitive tasks so you can focus on strategy and insight</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  Need help? Contact Jamie Juviler — <a href="mailto:jjuviler@hubspot.com">jjuviler@hubspot.com</a> or @jjuviler on Slack
+</footer>
+
+<div class="page-id">Page ID: 102</div>
+</body>
+</html>
