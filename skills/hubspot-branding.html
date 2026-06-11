@@ -9,6 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .copy-btn { position:absolute; top:12px; right:12px; background:rgba(255,122,89,0.85); color:white; border:none; padding:5px 12px; border-radius:4px; font-family:'Nunito',sans-serif; font-size:12px; font-weight:700; cursor:pointer; }
+    pre { position: relative; }
+    .swatch-grid { display:flex; flex-wrap:wrap; gap:0.75rem; margin:1rem 0 1.5rem; }
+    .swatch { border-radius:8px; padding:0.75rem 1rem; min-width:140px; font-size:0.85rem; font-weight:700; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -37,7 +43,89 @@
     <div class="content-inner">
       <div class="content-body">
 
-        <p>More info coming soon.</p>
+        <p style="background:#e6f9f0; border:1.5px solid #2ecc71; border-radius:8px; padding:1rem 1.25rem; color:#1a7a45; font-size:0.95rem;">This skill is shared with all HubSpot blog writers — you should have access automatically. To activate it, go to <strong>Customize → Skills</strong> in Claude and look for it under <em>Shared Skills</em>. Select the skill, then toggle it on in the top right. If you don't see the skill, reach out to your manager.</p>
+
+        <h2>Overview</h2>
+        <p>The HubSpot Branding skill applies the official HubSpot 2025 Brand System consistently to any artifact — HTML pages, dashboards, or Google Slides decks. It knows the full brand system: fonts, colors, logo rules, slide templates, and accessibility pairings, so you don't have to look anything up.</p>
+
+        <h2>When to Use</h2>
+        <ul>
+          <li>Creating or styling HTML artifacts, dashboards, or reports with HubSpot branding</li>
+          <li>Building Google Slides presentations that need to follow HubSpot brand guidelines</li>
+          <li>Any time you need to apply HubSpot colors, fonts, or layout specs to a Claude artifact</li>
+          <li>Checking whether a design matches the official 2025 brand system</li>
+        </ul>
+
+        <h2>How to Use</h2>
+        <ol>
+          <li>Open a new Claude chat with the HubSpot Branding skill active</li>
+          <li>Describe the artifact you want to create — a slide deck, dashboard, report, etc.</li>
+          <li>Claude will apply the full 2025 brand system automatically</li>
+          <li>Iterate with Claude as needed — adjust layouts, colors, content</li>
+        </ol>
+
+        <h2>Example Prompts</h2>
+        <pre><code>Create a 10-slide Google Slides deck summarizing our Q2 blog performance. Use HubSpot branding.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+        <pre><code>Build an HTML dashboard for this data with HubSpot branding.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+        <pre><code>Apply HubSpot branding to the artifact you just created.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+
+        <h2>What the Skill Knows</h2>
+
+        <h3>Typography</h3>
+        <p>The brand fonts are <strong>HubSpot Sans</strong> (body copy and headlines) and <strong>HubSpot Serif</strong> (headlines and subheads only — never body copy). When those fonts aren't available, <strong>Lexend Deca is the only approved fallback</strong> — not Playfair, Georgia, or any other serif. For email, use Arial.</p>
+        <ul>
+          <li>Only three Lexend Deca weights are approved: <strong>Light (300)</strong>, <strong>Medium (500)</strong>, <strong>Bold (700)</strong></li>
+          <li>In Google Slides, use Lexend Deca for everything — HubSpot Sans isn't available there</li>
+          <li>Body text: Light/300, line-height 1.35. Headlines: line-height 1.1</li>
+          <li>Sentence case for all headings and body copy — capitalize only the first word and proper nouns</li>
+          <li>Left or center alignment only — never right-aligned or justified</li>
+        </ul>
+
+        <h3>Color Palette</h3>
+        <p><strong>Primary colors:</strong></p>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#FF4800; color:#F8F5EE;">HubSpot Orange<br><span style="font-weight:400;">#FF4800</span></div>
+          <div class="swatch" style="background:#042729; color:#F8F5EE;">HubSpot Teal<br><span style="font-weight:400;">#042729</span></div>
+          <div class="swatch" style="background:#F8F5EE; color:#141414; border:1px solid #ddd;">HubSpot Cream<br><span style="font-weight:400;">#F8F5EE</span></div>
+          <div class="swatch" style="background:#141414; color:#F8F5EE;">HubSpot Neutral<br><span style="font-weight:400;">#141414</span></div>
+        </div>
+        <p><strong>Secondary accent colors:</strong> Magenta (#46062B), Lavender (#D6C2D9), Pink (#FCC3DC), Purple (#F9F5FF), Sage (#B9CDBE)</p>
+
+        <h3>Accessibility — Text Color Rules</h3>
+        <ul>
+          <li><strong>Light backgrounds → Neutral text.</strong> Cream, Sage, Lavender, Pink, and Purple are all "light."</li>
+          <li><strong>Dark backgrounds → Cream text.</strong> Teal, Magenta, Neutral, and Orange are "dark" — use Cream (#F8F5EE), not white.</li>
+          <li><strong>Orange text on web: never.</strong> Orange text is not accessible in HTML artifacts. It's fine in slides/print, but not on the web, and it must never exceed ~25% of any composition.</li>
+        </ul>
+
+        <h3>Logo</h3>
+        <ul>
+          <li><strong>Always the real SVG</strong> — never recreate the logo with text</li>
+          <li><strong>Orange logo</strong> on all brand backgrounds (Cream, Teal, Sage, Lavender, Purple, Pink, Magenta, Neutral) — do <em>not</em> switch to white on dark/Teal backgrounds</li>
+          <li><strong>Cream logo</strong> only on a full-flood Orange background (or over photography)</li>
+          <li>Keep clear space around the logo — minimum one "H" width on all sides</li>
+        </ul>
+
+        <h3>Google Slides Templates</h3>
+        <p>The skill knows the full slide template system. Tell Claude what type of slide you need and it will apply the correct layout:</p>
+        <ul>
+          <li><strong>Cover:</strong> Full-bleed Teal, Cream title (Bold), orange period on the final word of the hero headline (once per deck only)</li>
+          <li><strong>Agenda:</strong> Cream background, Orange numbered items</li>
+          <li><strong>Section divider:</strong> Teal background, Cream heading</li>
+          <li><strong>Body — text only, bullets, two-column, three-column, four-column</strong></li>
+          <li><strong>Stats/data:</strong> Large Bold numbers in Teal or Orange</li>
+          <li><strong>Quote, timeline, comparison table, FAQ, closing/thank you</strong></li>
+        </ul>
+        <p>Every content slide includes a running header (HubSpot wordmark left, section title right) and a slide number at bottom right.</p>
+
+        <h2>Key Rules to Know</h2>
+        <ul>
+          <li>The orange period at the end of a headline is used <strong>once per deck</strong>, on the cover/hero headline only — not on every slide title</li>
+          <li>One sub-palette per slide or card — don't mix multiple secondary colors in the same composition</li>
+          <li>Orange as a full flood is fine for slides and print, but <strong>not on the web</strong></li>
+          <li>Never use Roboto, Inter, Calibri, Playfair, or Georgia — <strong>Lexend Deca is the only approved fallback</strong></li>
+          <li>All blog image outputs (charts, tables, visualizations) are delivered as <strong>PNG files</strong> — not HTML, SVG, or JPEG</li>
+        </ul>
 
       </div>
     </div>
