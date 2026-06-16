@@ -574,7 +574,7 @@ footer {
 .page-id {
   position: fixed;
   bottom: 16px;
-  left: 16px;
+  right: 16px;
   z-index: 999;
   font-family: 'Nunito', sans-serif;
   font-size: 11px;
@@ -586,6 +586,12 @@ footer {
   padding: 4px 12px;
   letter-spacing: 0.04em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  user-select: none;
+}
+.page-id:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .needs-update {
