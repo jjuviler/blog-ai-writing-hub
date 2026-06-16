@@ -97,6 +97,56 @@ strong { font-weight: 700; }
 .nav-links a.active { background: rgba(255,122,89,0.1); color: var(--primary); }
 .nav-hamburger { display: none; cursor: pointer; background: none; border: none; padding: 0.5rem; }
 
+/* Nav dropdowns */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-trigger {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.nav-dropdown-trigger::after { content: '▾'; font-size: 0.75em; opacity: 0.7; }
+.nav-dropdown:hover .nav-dropdown-trigger,
+.nav-dropdown.open .nav-dropdown-trigger { background: rgba(255,122,89,0.07); color: var(--text); }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  min-width: 230px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 200;
+  padding: 0.35rem 0;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.45rem 1.1rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.12s, color 0.12s;
+  border-radius: 0;
+}
+.nav-dropdown-menu a:hover { background: var(--accent-bg); color: var(--primary); }
+
 /* Mobile nav */
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -107,6 +157,19 @@ strong { font-weight: 700; }
     padding: 1rem;
   }
   .nav-hamburger { display: block; }
+  .nav-dropdown { flex-direction: column; align-items: flex-start; }
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--border);
+    border-radius: 0;
+    padding: 0.2rem 0 0.2rem 0.75rem;
+    min-width: unset;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
 }
 
 /* Hero */

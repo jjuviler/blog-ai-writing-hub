@@ -23,7 +23,31 @@
     </a>
     <div class="nav-links" id="nav-links">
       <a href="../index.html">Home</a>
-      <a href="../getting-started.html">Getting Started </a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger">Tools</span>
+        <div class="nav-dropdown-menu">
+          <a href="../blogbot.html">Blogbot</a>
+          <a href="../copy-page-body.html">Copy Page Body</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger">Trainings</span>
+        <div class="nav-dropdown-menu">
+          <a href="../write-framework.html">WRITE Framework</a>
+          <a href="../videos/02-creating-editing-claude-skills.html">Using and Creating Claude Skills</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger">Claude Skills</span>
+        <div class="nav-dropdown-menu">
+          <a href="../skills/brief-qa.html">Brief QA</a>
+          <a href="../skills/product-research-assistant.html">Product Research Assistant</a>
+          <a href="../skills/hubspot-products.html">HubSpot Products</a>
+          <a href="../skills/hubspot-branding.html">HubSpot Branding</a>
+          <a href="../skills/aeo-draft-auditor.html">AEO Draft Auditor</a>
+        </div>
+      </div>
+      <a href="../getting-started.html">Getting Started</a>
       <a href="../best-practices.html">Best Practices</a>
     </div>
     <button class="nav-hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -106,5 +130,19 @@ Use the HubSpot Products skill.</code><button class="copy-btn" onclick="navigato
 </footer>
 
 <div class="page-id" onclick="navigator.clipboard.writeText(this.textContent.trim());var t=document.createElement('span');t.textContent='Copied!';t.style.cssText='position:fixed;bottom:48px;right:16px;background:#333;color:#fff;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700;font-family:Nunito,sans-serif;z-index:1000;transition:opacity 0.3s';document.body.appendChild(t);setTimeout(function(){t.style.opacity=0;setTimeout(function(){t.remove()},300)},1500)">Page ID: 304</div>
+<script>
+document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){
+  t.addEventListener('click',function(e){
+    e.stopPropagation();
+    var d=t.parentElement;
+    var wasOpen=d.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(x){x.classList.remove('open');});
+    if(!wasOpen) d.classList.add('open');
+  });
+});
+document.addEventListener('click',function(){
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open');});
+});
+</script>
 </body>
 </html>
