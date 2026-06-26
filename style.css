@@ -173,7 +173,7 @@ strong { font-weight: 700; }
 /* Hero */
 .hero {
   background: linear-gradient(135deg, var(--accent-bg) 0%, #E5EEFA 100%);
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 4.5rem 1.5rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
