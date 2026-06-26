@@ -67,61 +67,53 @@
     <div class="content-inner">
       <div class="content-body">
         <p style="background:#e6f9f0; border:1.5px solid #2ecc71; border-radius:8px; padding:1rem 1.25rem; color:#1a7a45; font-size:0.95rem;">This skill is shared with all HubSpot blog writers — you should have access automatically. To activate it, go to <strong>Customize → Skills</strong> in Claude and look for it under <em>Shared Skills</em>. Select the skill, then toggle it on in the top right. If you don't see the skill, reach out to your manager.</p>
-        <div style="margin-bottom:2rem;">
-          <iframe src="https://www.loom.com/embed/bb433e9f96af4db4afb9cb08b43a641b" frameborder="0" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:8px;"></iframe>
-        </div>
-
         <h2>Overview</h2>
-        <p>The HubSpot Products skill provides a comprehensive database of HubSpot's product pages, pricing tiers, features, and integrations. It's designed to be your source of truth for accurate HubSpot product information when writing blog content.</p>
+        <p>The HubSpot Products skill keeps Claude from writing stale HubSpot facts into your content. Instead of relying on training data or a stored snapshot, it searches and fetches live HubSpot pages — pricing pages, product pages, and the official Product & Services Catalog — before stating any HubSpot product fact.</p>
 
         <blockquote>
-          <strong>Why It Exists:</strong> HubSpot's live product pages are often hard for AI to read due to JavaScript rendering, cookie banners, and complex page structures. This skill provides clean, LLM-optimized product data.
+          <strong>Why It Exists:</strong> HubSpot renames products, changes prices, and moves features between tiers on a regular cadence. Claude's training data on this is reliably out of date, and stale facts are especially damaging when they end up in published content. This skill treats live pages as the only source of truth.
         </blockquote>
 
-        <h2>What It Covers</h2>
+        <h2>What It Looks Up</h2>
         <ul>
-          <li><strong>All 8 HubSpot Hubs:</strong> Marketing, Sales, Service, CMS, Operations, Commerce, Payments, Data Management</li>
-          <li><strong>Pricing Information:</strong> Free, Starter, Professional, Enterprise tiers for each hub</li>
-          <li><strong>Feature Details:</strong> Specific capabilities and tools within each hub</li>
-          <li><strong>Integrations:</strong> Connected apps and platform compatibility</li>
-          <li><strong>Product Relationships:</strong> How different hubs and features work together</li>
+          <li><strong>Pricing, tiers, seat costs, and contact limits</strong> — from hubspot.com/pricing/&lt;hub&gt;</li>
+          <li><strong>Product capabilities and positioning</strong> — from hubspot.com/products/*</li>
+          <li><strong>Feature-to-tier mapping</strong> — from the pricing comparison table for the relevant hub</li>
+          <li><strong>Hard limits and specs</strong> — from the official Product & Services Catalog (legal.hubspot.com)</li>
         </ul>
 
-        <h2>When to Use</h2>
+        <h2>When It Activates</h2>
+        <p>The skill is designed to trigger automatically — you don't always need to invoke it explicitly.</p>
         <ul>
-          <li>Writing sections about specific HubSpot features (lead scoring, email automation, etc.)</li>
-          <li>Comparing HubSpot pricing tiers in listicles or buying guides</li>
-          <li>Fetching accurate product descriptions for blog intros or context sections</li>
-          <li>Verifying feature availability across different hub tiers</li>
-          <li>Any time you need canonical HubSpot product information</li>
+          <li><strong>Direct questions</strong> about HubSpot pricing, tiers, seats, features, or capabilities</li>
+          <li><strong>Content work</strong> — any brief, draft, outline, or post you're writing or editing that mentions a HubSpot product, price, tier, or feature, even if you never ask a HubSpot question directly</li>
         </ul>
-
+        <p>If a HubSpot fact is about to appear in Claude's output, this skill should catch it and verify against a live source first.</p>
 
         <h2>How to Use</h2>
 
-        <h3>Example 1: Writing About a Specific Feature</h3>
-        <pre><code>Write a paragraph about HubSpot's lead scoring feature in Marketing Hub.
-Use the HubSpot Products skill for accurate information.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
+        <h3>Example 1: It triggers on its own</h3>
+        <pre><code>Write an intro paragraph for a post comparing HubSpot Marketing Hub tiers.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
 
-        <h3>Example 2: Fetching Pricing Information</h3>
-        <pre><code>What's the pricing for each tier of Marketing Hub?
+        <h3>Example 2: Invoke it explicitly</h3>
+        <pre><code>What's the per-seat price for Sales Hub Professional?
 Use the HubSpot Products skill.</code><button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">Copy</button></pre>
 
         <h2>Important Notes</h2>
 
-        <h3>Data Freshness</h3>
+        <h3>Always live — no snapshot</h3>
         <ul>
-          <li><strong>Current as of:</strong> April 2026 (snapshot of live HubSpot product pages)</li>
-          <li><strong>Update schedule:</strong> Quarterly (after major launches like INBOUND, Spotlight)</li>
-          <li><strong>Always verify:</strong> For posts about brand-new features or recent pricing changes, check live pages</li>
+          <li>There's no stored data to go stale. Every lookup goes to a live HubSpot page.</li>
+          <li>For feature-to-tier questions, Claude checks the hub's <strong>pricing comparison table</strong>, not the feature's marketing page — the marketing page won't tell you which tier it's in.</li>
+          <li>If a live page won't render, Claude will say so and flag which source it fell back to rather than presenting a secondary number as authoritative.</li>
         </ul>
 
         <h2>What This Prevents</h2>
         <ul>
-          <li><strong>Hallucinated features:</strong> Claude won't make up product capabilities</li>
-          <li><strong>Outdated pricing:</strong> Gets pricing from curated data, not random web results</li>
-          <li><strong>Wrong hub assignments:</strong> Knows which features belong to which hub</li>
-          <li><strong>Broken links:</strong> Provides canonical URLs that actually work</li>
+          <li><strong>Stale pricing:</strong> HubSpot has shifted to per-seat pricing and changed rates multiple times — training data gets this wrong</li>
+          <li><strong>Wrong hub assignments:</strong> Features get moved between hubs; live comparison tables catch this</li>
+          <li><strong>Hallucinated feature availability:</strong> Claude won't assert a feature exists in a tier it can't confirm on a live page</li>
+          <li><strong>Silent errors in drafts:</strong> The skill applies even when you're just writing, not asking questions — so stale facts don't slip through undetected</li>
         </ul>
       </div>
     </div>
